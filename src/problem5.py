@@ -3,12 +3,13 @@ Exam 3, problem 5.
 
 Authors: Vibha Alangar, Aaron Wilkin, David Mutchler, Dave Fisher, 
          Matt Boutell, Amanda Stouder, their colleagues and 
-         PUT_YOUR_NAME_HERE.  January 2019.
+         Emily Guajardo.  January 2019.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
+import math
 
 
 def main():
@@ -17,7 +18,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the doc-string for the   is_prime   function defined below.
+# Done: 2.  READ the doc-string for the   is_prime   function defined below.
 # It is the same as you have seen before.
 # After you UNDERSTAND the doc-string (JUST the doc-string, NOT the code),
 # ASKING QUESTIONS AS NEEDED, change the above _TODO_ to DONE.
@@ -144,8 +145,18 @@ def problem5(seq_of_seq):
       :type seq_of_seq: list of list of int
       :rtype: (list of int) | int
     """
+    seq = []
+    num = -math.inf
+    for j in range(len(seq_of_seq)):
+        for k in range(len(seq_of_seq[j])):
+            if seq_of_seq[j][k] > num:
+                num = seq_of_seq[j][k]
+        if num > -math.inf:
+            seq += [num]
+        num = -math.inf
+    return seq
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
